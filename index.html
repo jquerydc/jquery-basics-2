@@ -227,6 +227,26 @@ $("div").slideDown("fast");</code>
 					<p>animate color with the <a href="https://github.com/jquery/jquery-color/">jQuery-color plugin</a> </p>
 				</section>
 				<section>
+					<section><h2>CSS3 with jQuery fallback</h2></section>
+					<section>
+						<p><a href="http://api.jquery.com/jQuery.cssHooks/">Test for CSS3</a> support</p>
+						<pre><code class="javascript">"webkitTransition" in document.documentElement.style
+						</code>
+						</pre>
+					</section> 
+					<section>
+						better yet just use Modernizr
+						<pre><code class="javascript">Modernizr.load({
+  test: Modernizr.csstransitions,
+  yep : 'animate-with-css.js',
+  nope: 'animate-with-jquery.js',
+  complete: function(){
+    // initialize the animation
+  }
+});</code> </pre>
+					</section>
+				</section>
+				<section>
 					<h2>stop();</h2>
 					<p>prevent animation from&nbsp;<br>
 					continuously&nbsp;firing, watch...&nbsp;</p>
