@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Asa Baylus">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+		<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" />
+		<link rel="stylesheet" href="css/reveal.min.css" />
+		<link rel="stylesheet" id="theme" href="css/theme/beige.css" />
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<style type="text/css">
+			pre { box-shadow: 0 0 !important; }
+			code { box-shadow: 0 0 6px rgba(0, 0, 0, .3);  }
+		</style>
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<section>
+						<h1>
+							<br />Back to the Basics
+						</h1>
+						<p>Part 2</p>
+					</section>
+					<section>
+						<h3>last meeting we covered...</h3>
+						<div>
+							<ul>
+								<li>selectors<br />
+								</li>
+								<li>manipulation</li>
+								<li>ajax</li>
+							</ul>
+							<div style="text-align: left;">
+								<br />
+							</div>
+						</div>
+						<h3>Tonight we talk about...</h3>
+						<div>
+							<ul>
+								<li>css</li>
+								<li>effects</li>
+								<li>utilities</li>
+								<li>contributing</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h2>Bootstrap Your Site</h2>
+						<div>with Yeoman we'll quickly setup a new website<br />http://yeoman.io</div>
+						<pre>
+			                    <code>$ mkdir mywebsite
+$ cd mywebsite
+$ yeoman init quickstart</code>
+			                    </pre>
+						<div>now we have</div>
+						<div>jQuery</div>
+						<div>Bootstrap<br />
+							<br />
+						</div>
+						<div>:)</div>
+					</section>
+				</section>
+				<section>
+					<h1>
+						<br />
+					</h1>
+					<h1>CSS</h1>
+				</section>
+				<section>
+					<div>
+						<a href="http://api.jquery.com/css/">.css(s)</a>
+					</div>
+					<div>
+						change one property
+					</div>
+					<pre>
+			        	<code>$("#foo").css("border", "3px dotted orange")</code>
+			        </pre>
+					<p>change more than one style</p>
+					<div>
+						<pre>
+			            <code>$("#foo").css({
+   "border" : "3px dotted orange",
+   "opacity": ".5",
+   property : value
+   ...
+});</code>
+			        </pre>
+					</div>
+				</section>
+				<section>
+					<p>Use a function to remove a class ...</p>
+					<pre>
+			            <code>$("div").removeClass(function() {
+	return $(this).prev().attr('class');
+});</code>
+			        </pre>
+					<p>or remove all classes ...</p>
+					<pre>
+			        <code>$("div").removeClass();</code>
+			    </pre>
+				</section>
+				<section>
+					<h5>Adding Classes</h5>
+					<div>
+						<pre>
+			        <code>$("div").addClass("foo");
+$("div").addClass("foo bar"); // multiple classes</code>
+			    </pre>
+					</div>
+					<h5>Removing Classes</h5>
+					<div>
+						<pre>
+			    <code>$("div").removeClass("foo");
+$("div").removeClass("foo bar"); // multiple classes</code>
+			</pre>
+					</div>
+				</section>
+				<section>
+					<h1>
+						<br />
+					</h1>
+					<h1>EFFECTS</h1>
+				</section>
+				<section>
+					<h2>
+						<br />
+					</h2>
+					<ul>
+						<li>Based on duration (not frames)</li>
+						<li>CSS3 vs JS animation</li>
+						<li>easing "swing" or "linear"</li>
+						<li>hide/show</li>
+						<li>fadein/out</li>
+						<li>slide up/down</li>
+						<li>toggle</li>
+					</ul>
+				</section>
+				<section>
+					<h2>hide/show</h2>
+					<div>
+						<a href="http://api.jquery.com/category/effects/basics/">http://api.jquery.com/category/effects/basics/</a>
+						<br />
+					</div>
+					<pre>
+			            <code>$("div").hide();
+
+// restores el to original value 
+// ex: display:'inline-block'
+$("div").show("fast");
+
+$("div").toggle()</code>
+			        </pre>
+				</section>
+				<section>
+					<h2>fade</h2>
+					<div>
+						<a href="http://api.jquery.com/category/effects/fading/">http://api.jquery.com/category/effects/fading/</a>
+						<br />
+					</div>
+					<pre>
+			            <code>$("div").fadeIn("slow");
+$("div").fadeOut("fast");
+$("div").fadeTo(2000, 0.5);</code>
+			        </pre>
+				</section>
+				<section>
+					<h2>slide</h2>
+					<div>
+						<a href="http://api.jquery.com/category/effects/sliding/">http://api.jquery.com/category/effects/sliding/</a>
+						<br />
+					</div>
+					<pre>
+			            <code class="javascript">$("div").slideUp("slow");
+$("div").slideDown("fast");</code>
+			        </pre>
+					<p>beware of <a href="http://blog.pengoworks.com/index.cfm/2009/4/21/Fixing-jQuerys-slideDown-effect-ie-Jumpy-Animation">padding pop</a>!</p>
+					<p></p>
+				</section>
+				<section>
+					<h2>animate</h2>
+					<p>
+						<a href="http://api.jquery.com/animate/">http://api.jquery.com/animate/</a>
+						<br />
+					</p>
+					<p>
+						<font color="#ff0000">
+						*</font>All animated properties should be animated to a&nbsp;<br />
+						<em>single numeric value</em>
+					</p>
+					<pre>
+			            <code class="javascript">$("div").animate({
+   "left"     : "+=100px",
+   "height"   : "-=50px",
+   "font-size": "60px"
+} , 2000);</code>
+			        </pre>
+					<p>if position is set to "static" (the default) animating top, bottom, left and right will have no effect.</p>
+					<p>animate color with the <a href="https://github.com/jquery/jquery-color/">jQuery-color plugin</a> </p>
+				</section>
+				<section>
+					<h2>stop();</h2>
+					<p>prevent animation from&nbsp;<br>
+					continuously&nbsp;firing, watch...&nbsp;</p>
+					<p>
+						<a href="http://goo.gl/JwNiC">jQuery look: Tim Van Damme</a>
+					</p>
+					<pre><code class="javascript">$("div").hover(function(){
+	$(this).slideDown();
+}, function(){
+	$(this).slideUp();
+})</code></pre>
+					<p>
+						<br />
+					</p>
+				</section>
+				<section>
+					<h2>Chaining Animation</h2>
+					<div>each animation will run until it completes<br />then the next will start</div>
+					<pre>
+			    <code>$("div").slideDown().fadeOut();</code>
+			</pre>
+				</section>
+				<section>
+					<h2>callbacks vs. deferreds</h2>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
