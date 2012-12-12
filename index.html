@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>jQuery CSS, Effect, Utilities &amp; Contributing to core</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -74,18 +74,20 @@
 					</section>
 					<section>
 						<h2>Bootstrap Your Site</h2>
-						<div>with Yeoman we'll quickly setup a new website<br />http://yeoman.io</div>
-						<pre>
-			                    <code>$ mkdir mywebsite
-$ cd mywebsite
-$ yeoman init quickstart</code>
+						<div>with Yeoman we'll quickly setup a new website<br />
+							<a href="http://yeoman.io"><img src="images/yeoman-logo.png" alt="Yeoman.io" style="border-color: transparent;box-shadow: none;"></a></div><pre>
+	<code>
+	$ mkdir mywebsite
+	$ cd mywebsite
+	$ yeoman init quickstart	
+	</code>
 			                    </pre>
-						<div>now we have</div>
-						<div>jQuery</div>
-						<div>Bootstrap<br />
-							<br />
+						<div class="fragment">now we have<br>
+						<b>jQuery + Modernizr + Bootstrap</b><br>
+						Bootstrap<br>
+						<br>
 						</div>
-						<div>:)</div>
+						<div class="fragment">:)</div>
 					</section>
 				</section>
 				<section>
@@ -96,52 +98,68 @@ $ yeoman init quickstart</code>
 				</section>
 				<section>
 					<div>
-						<a href="http://api.jquery.com/css/">.css(s)</a>
+						<a href="http://api.jquery.com/css/">.css()</a>
 					</div>
 					<div>
 						change one property
 					</div>
 					<pre>
-			        	<code>$("#foo").css("border", "3px dotted orange")</code>
+	<code>
+	$("#foo").css("border", "3px dotted orange")
+	</code>
 			        </pre>
 					<p>change more than one style</p>
 					<div>
 						<pre>
-			            <code>$("#foo").css({
-   "border" : "3px dotted orange",
-   "opacity": ".5",
-   property : value
-   ...
-});</code>
+	<code>
+	$("#foo").css({
+	   "border" : "3px dotted orange",
+	   "opacity": ".5",
+	   property : value
+	   ...
+	});
+	</code>
 			        </pre>
 					</div>
 				</section>
 				<section>
 					<p>Use a function to remove a class ...</p>
 					<pre>
-			            <code>$("div").removeClass(function() {
-	return $(this).prev().attr('class');
-});</code>
+	<code>
+	$("div").removeClass(function() {
+		return $(this).prev().attr('class');
+	});
+	</code>
 			        </pre>
 					<p>or remove all classes ...</p>
 					<pre>
-			        <code>$("div").removeClass();</code>
+	<code>
+	$("div").removeClass();
+	</code>
 			    </pre>
 				</section>
 				<section>
 					<h5>Adding Classes</h5>
 					<div>
 						<pre>
-			        <code>$("div").addClass("foo");
-$("div").addClass("foo bar"); // multiple classes</code>
+	<code>
+	$("div").addClass("foo");
+	
+	// multiple classes
+	$("div").addClass("foo bar"); 
+	</code>
 			    </pre>
 					</div>
 					<h5>Removing Classes</h5>
 					<div>
 						<pre>
-			    <code>$("div").removeClass("foo");
-$("div").removeClass("foo bar"); // multiple classes</code>
-			</pre>
+	<code>
+	$("div").removeClass("foo");
+
+	// multiple classes
+	$("div").removeClass("foo bar");
+	</code>
+						</pre>
 					</div>
 				</section>
 				<section>
@@ -171,13 +189,15 @@ $("div").removeClass("foo bar"); // multiple classes</code>
 						<br />
 					</div>
 					<pre>
-			            <code>$("div").hide();
-
-// restores el to original value 
-// ex: display:'inline-block'
-$("div").show("fast");
-
-$("div").toggle()</code>
+	<code>
+	$("div").hide();
+	
+	// restores el to original value 
+	// ex: display:'inline-block'
+	$("div").show("fast");
+	
+	$("div").toggle()
+	</code>
 			        </pre>
 				</section>
 				<section>
@@ -187,9 +207,11 @@ $("div").toggle()</code>
 						<br />
 					</div>
 					<pre>
-			            <code>$("div").fadeIn("slow");
-$("div").fadeOut("fast");
-$("div").fadeTo(2000, 0.5);</code>
+	<code>
+	$("div").fadeIn("slow");
+	$("div").fadeOut("fast");
+	$("div").fadeTo(2000, 0.5);
+	</code>
 			        </pre>
 				</section>
 				<section>
@@ -199,8 +221,10 @@ $("div").fadeTo(2000, 0.5);</code>
 						<br />
 					</div>
 					<pre>
-			            <code class="javascript">$("div").slideUp("slow");
-$("div").slideDown("fast");</code>
+			            <code class="javascript">
+	$("div").slideUp("slow");
+	$("div").slideDown("fast");
+	</code>
 			        </pre>
 					<p>beware of <a href="http://blog.pengoworks.com/index.cfm/2009/4/21/Fixing-jQuerys-slideDown-effect-ie-Jumpy-Animation">padding pop</a>!</p>
 					<p></p>
@@ -217,11 +241,13 @@ $("div").slideDown("fast");</code>
 						<em>single numeric value</em>
 					</p>
 					<pre>
-			            <code class="javascript">$("div").animate({
-   "left"     : "+=100px",
-   "height"   : "-=50px",
-   "font-size": "60px"
-} , 2000);</code>
+			            <code class="javascript">
+	$("div").animate({
+	   "left"     : "+=100px",
+	   "height"   : "-=50px",
+	   "font-size": "60px"
+	} , 2000);
+	</code>
 			        </pre>
 					<p>if position is set to "static" (the default) animating top, bottom, left and right will have no effect.</p>
 					<p>animate color with the <a href="https://github.com/jquery/jquery-color/">jQuery-color plugin</a> </p>
@@ -230,21 +256,36 @@ $("div").slideDown("fast");</code>
 					<section><h2>CSS3 with jQuery fallback</h2></section>
 					<section>
 						<p><a href="http://api.jquery.com/jQuery.cssHooks/">Test for CSS3</a> support</p>
-						<pre><code class="javascript">"webkitTransition" in document.documentElement.style
-						</code>
+						<pre><code class="javascript">
+"webkitTransition" in document.documentElement.style
+	</code>
 						</pre>
 					</section> 
 					<section>
 						better yet just use Modernizr
-						<pre><code class="javascript">Modernizr.load({
-  test: Modernizr.csstransitions,
-  yep : 'animate-with-css.js',
-  nope: 'animate-with-jquery.js',
-  complete: function(){
-    // initialize the animation
-  }
-});</code> </pre>
+						<pre><code class="javascript">
+	if (Modernizr.csstransitions){
+		// CSS3 
+		$('div').addClass('myTransition');
+	} else {
+		// jQuery fallback
+		$('div').animate( ... );
+	}
+	</code></pre>
 					</section>
+					<section>
+						Modernizr + YepNope.js to conditionaly load CSS3 animation with jQuery fallback
+						<pre><code class="javascript">
+	Modernizr.load({
+	  test: Modernizr.csstransitions,
+	  yep : 'animate-with-css.js',
+	  nope: 'animate-with-jquery.js',
+	  complete: function(){
+	    // initialize the animation
+	  }
+	});
+	</code></pre>
+					</section>					
 				</section>
 				<section>
 					<h2>stop();</h2>
@@ -253,11 +294,13 @@ $("div").slideDown("fast");</code>
 					<p>
 						<a href="http://goo.gl/JwNiC">jQuery look: Tim Van Damme</a>
 					</p>
-					<pre><code class="javascript">$("div").hover(function(){
-	$(this).slideDown();
-}, function(){
-	$(this).slideUp();
-})</code></pre>
+					<pre><code class="javascript">
+	$("div").hover(function(){
+		$(this).slideDown();
+	}, function(){
+		$(this).slideUp();
+	})
+	</code></pre>
 					<p>
 						<br />
 					</p>
@@ -266,7 +309,9 @@ $("div").slideDown("fast");</code>
 					<h2>Chaining Animation</h2>
 					<div>each animation will run until it completes<br />then the next will start</div>
 					<pre>
-			    <code>$("div").slideDown().fadeOut();</code>
+	<code>
+	$("div").slideDown().fadeOut();
+	</code>
 			</pre>
 				</section>
 				<section>
