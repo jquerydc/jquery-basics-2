@@ -340,15 +340,192 @@
 				</section>
 				<section>
 					<h2>callbacks vs. deferreds</h2>
+					<br /><br />
+					<p>Greg Franko</p>
+					<p><strong>Github:</strong> gfranko</p>
+					<p><strong>Twitter:</strong> gregfranko</p>
 				</section>
 				<section>
-					<ul>
-						<li>Callbacks are fired once per match element</li>
-					 	<li>Deferred fires when all elements have completed the animation</li>
-					</ul>
+					<h2>Callbacks</h2>
+					<div>You can pass a callback function as a parameter to the jQuery <strong>animate()</strong> method.</div>
+					<pre>
+					<code>
+$(".example").animate({
+         
+	opacity: 1.0
+  
+}, 4000, function() {
+    
+	// Animation complete
+	console.log("One of the example animations completed");
+  
+});
+					</code>
+					</pre>
 				</section>
 
+				<section>
+					<h2>Deferreds</h2>
+					<div>jQuery Deferred Objects are super helpful for writing maintainable code when dealing with async code (ie. ajax, animations, etc), without resorting to callback hell.
+						<br />
+						<a href="http://jsbin.com/onirab/4/edit" target="_blank">jsbin example</a>
+					<pre>
+					<code>
+// Wait method that waits x number of seconds to return
+function wait(secs) {
+	
+	var deferred = new $.Deferred();
 
+	setTimeout(function() {
+
+		deferred.resolve("Finished!");
+
+	}, secs * 1000);
+
+	return deferred;
+
+}
+
+// Tells the wait method to wait 3 seconds
+wait(3).done(function(msg) {
+      
+	console.log(msg);
+      
+});
+					</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Deferreds and Animations</h2>
+					<div>Deferred/promises fire when a targeted element(s) have completed all animations</div>
+					<pre>
+					<code>
+$(".example").animate({
+         
+	opacity: 1.0
+  
+}, 4000);
+
+$(".example").promise().done(function() {
+        
+	// All animations have completed
+	console.log("All of my the animations are complete");
+        
+});
+					</code>
+					</pre>
+				</section>
+				<section>
+					<h2>Animation Differences</h2>
+					<ul>
+						<li>Callbacks will be called each time a single animation completes.</li>
+					 	<li>Deferred/promises fires when all elements have completed the animation</li>
+					</ul>
+					<p><a href="http://jsbin.com/ofuhaz/4/edit" target="_blank">jsbin example</a></p>
+					<p><a href="http://gregfranko.com/jquery.tocify.js/" target="_blank">jQuery plugin example</a></p>
+				</section>
+
+				<section>
+					<h2>jQuery Utility Functions</h2>
+					<ul>
+						<li>$.extend()</li>
+						<li>$.data()</li>
+						<li>$.map()</li>
+						<li>$.grep()</li>
+					</ul>
+				</section>
+				<section>
+					<h2>$.extend()</h2>
+					<div>Merges the contents of two or more objects together into the first object.<br />
+						<a href="http://jsbin.com/adujay/3/edit" target="_blank">jsbin example</a></div>
+					<pre>
+					<code>
+var greg1 = {
+	name: "Greg Franko",    
+	occupation: "JavaScript Engineer",
+	interests: {
+		"sports": "Golf, Tennis"
+	}
+}
+        
+var greg2 = {
+	name: "Greg Lavallee",
+	occupation: "Web Developer",
+	interests: {      
+		"reading": "Nerd books"
+	}
+}
+        
+var newPerson = $.extend(true, {}, greg1, greg2);
+console.log("New and Improved Greg:", newPerson);
+					</code>
+					</pre>
+				</section>
+				<section>
+					<h2>$.data()</h2>
+					<div>Store and returns arbitrary data associated with the specified element.<br />
+						<a href="http://jsbin.com/ovumat/5/edit" target="_blank">jsbin example</a></div>
+					<pre>
+					<code>
+$(".test").data("clicked", 0);
+      
+$(".test").bind({
+        
+	"click": function() {          
+      
+		$(this).data("clicked", $(this).data("clicked") + 1);
+      
+	},
+        
+	"hover": function() {
+   
+		console.log($(this).data("clicked"));
+    
+	}
+        
+});
+					</code>
+					</pre>
+				</section>
+				<section>
+					<h2>$.map()</h2>
+					<div>Allows you to run a function against each item in an array and update each value.  Returns a new array.<br />
+						<a href="http://jsbin.com/owicex/2/edit" target="_blank">jsbin example</a></div>
+					<pre>
+					<code>
+      var numbers = [3, 6, 10], isEven;      
+      
+      isEven = $.map(numbers, function(val, index) {
+      
+        return val % 2 === 0;
+      
+      });         
+      
+      // [false, true, true]
+      console.log("New Array", isEven);
+					</code>
+					</pre>
+				</section>
+
+				</section>
+				<section>
+					<h2>$.grep()</h2>
+					<div>Allows you to filter an existing array to only return specific values.  Returns a new array.<br />
+						<a href="http://jsbin.com/owicex/2/edit" target="_blank">jsbin example</a></div>
+					<pre>
+					<code>
+var numbers = [3, 6, 10], evenNumbers;
+    
+evenNumbers = $.grep(numbers, function(val, index) {
+      
+	return val % 2 === 0;
+      
+});   
+// [6, 10]
+console.log("Even Numbers Array", evenNumbers);
+					</code>
+					</pre>
+				</section>
 				<section class="elgreg-slides">
 					<h1>Contributing to jQuery</h1>
 					<h2>How you can help (and get help)</h2>
