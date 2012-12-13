@@ -30,6 +30,11 @@
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 
+		<style>
+			.elgreg-slides img {
+				max-width: 50%;
+			}
+		</style>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -285,7 +290,7 @@
 	$("div").slideDown().fadeOut();
 	</code>
 			</pre>
-				</section>				
+				</section>
 				<section>
 					<section><h2>CSS3 with jQuery fallback</h2></section>
 					<section>
@@ -332,15 +337,92 @@
 				</section>
 
 
-
-				<section>
+				<section class="elgreg-slides">
 					<h1>Contributing to jQuery</h1>
-					<h2>How you can help</h2>
+					<h2>How you can help (and get help)</h2>
 				</section>
 
-				<section>
-					<h2>Straight to the Source</h2>
+				<section class="elgreg-slides">
+					<section class="elgreg-slides">
+						<h2>Bugs, bugs, bugs</h2>
+						<p><a href="http://bugs.jquery.com/"><img src="/images/bugs.png"></a></p>
+						<p><a href="http://bugs.jquery.com/">http://bugs.jquery.com/</a></p>
 
+					</section>
+					<section class="elgreg-slides">
+						<p>Is that really a bug? Make sure to check:
+							<ul>
+								<li><a href="http://docs.jquery.com/How_to_Report_Bugs">How to report bugs</a></li>
+								<li><a href="http://lmgtfy.com/?q=jquery+animation+jump#">The Google</a></li>
+								<li><a href="http://forum.jquery.com/">The jQuery forum</a></li>
+								<li>Stack Overflow</li>
+								<li>Existing bugs on bugs.jquery.com</li>
+								<li>That you're in the right place (jQuery plugsin, jQuery UI, etc. are somewhere else)</li>
+								<li>Your own (drunk) code</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h2>Bug reporting basics</h2>
+						<ol>
+							<li>Specify version(s) of jQuery, OS, browser(s)</li>
+							<li>Reduce the bug to a test case on <a href="http://jsfiddle.net/">jsFiddle</a>, <a href="http://jsbin.com/">jsbin</a>, etc.</li>
+							<li>Stay up to date on your bug!</li>
+						</ol>
+
+
+					</section>
+				</section>
+				<section class="elgreg-slides">
+					<h2>IRC is your Friend</h2>
+					<p><a href="http://webchat.freenode.net/?channels=%23jquery"><img src="/images/irc.jpg"></a></p>
+					<p>Limechat, freenode web, etc.</p>
+					<p>[insert warning here]</p>
+				</section>
+
+				<section class="elgreg-slides">
+					<section>
+						<h2>Straight to the Source</h2>
+						<p><a href="http://github.com/jquery/jquery"><img src="http://octodex.github.com/images/original.jpg"></a></p>
+						<p>[<a href="http://github.com/jquery/jquery">http://github.com/jquery/jquery</a>]</p>
+					</section>
+
+					<section class="elgreg-slides">
+						<h2>Don't just report it. Fix it!</h2>
+						<ol>
+							<li><a href="https://github.com/jquery/jquery">Fork it</a></li>
+							<li>
+								Clone it:
+								<pre><code class="bash">> git clone https://github.com/jquerydc/jquery.git</code></pre>
+							</li>
+							<li>Get in there:<pre><code class="bash">> cd jquerydc</pre></code></li>
+							<li>Add the master:
+								<pre><code class="bash">> git remote add upstream https://github.com/jquery/jquery.git</code></pre></li>
+							<li>Fetch and merge the master
+	<pre><code class="bash">> git fetch upstream
+	> git merge upstream/master</pre></code></li>
+							<li>Run tests!</li>
+						</ol>
+					</section>
+
+					<section>
+						<h2>Write tests for what you fix</h2>
+						<h3>If you don't, you'll be asked to.</h3>
+						<p>Check out <a href="http://browserstack.com">browserstack</a> for cross browser testing.</p>
+						<p><a href="http://swarm.jquery.org/user/jquery">Test swarm is rad</a></p>
+					</section>
+
+					<section class="elgreg-slides">
+						<h2>Pull!</h2>
+						<p><a href="https://github.com/jquerydc/jquery"><img src="/images/pull.jpg"/></a></p>
+						<p><img src="/images/pull_request.png"></p>
+						<p>Create a pull request. Include information about the ticket from bugs.jquery.com and update the ticket with a link back.</p>
+					</section>
+				</section>
+
+				<section class="elgreg-slides">
+					<h2>Thanks</h2>
 				</section>
 
 			</div>
