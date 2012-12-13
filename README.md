@@ -1,3 +1,6 @@
+#DEMOS
+look under /app/demo.html for demos
+
 # reveal.js
 
 A framework for easily creating beautiful presentations using HTML. [Check out the live demo](http://lab.hakim.se/reveal-js/).
