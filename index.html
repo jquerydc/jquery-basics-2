@@ -88,7 +88,7 @@
 	</code>
 			                    </pre>
 						<div class="fragment">now we have<br>
-						<b>jQuery + Modernizr + Bootstrap</b><br>
+						<b>jQuery + Modernizr + HTML5 boiler plate</b><br>
 						Bootstrap<br>
 						<br>
 						</div>
@@ -112,14 +112,16 @@
 						<a href="http://api.jquery.com/css/">.css()</a>
 					</div>
 					<div>
-						change one property
+						change one property <br>
+						<small><a href="http://jsbin.com/urevor/1/edit" target="_new">http://jsbin.com/urevor/1/edit</a></small>	
 					</div>
 					<pre>
 	<code>
 	$("#foo").css("border", "3px dotted orange")
 	</code>
 			        </pre>
-					<p>change more than one style</p>
+					<p>change more than one style <br>
+						<small><a href="http://jsbin.com/urevor/2/edit" target="_new">http://jsbin.com/urevor/2/edit</a></small></p>
 					<div>
 						<pre>
 	<code>
@@ -156,10 +158,12 @@
 	$("div").removeClass("foo bar");
 	</code>
 						</pre>
-					</div>
+					</div><br>
+						<small><a href="http://jsbin.com/urevor/5/edit" target="_new">http://jsbin.com/urevor/5/edit</a></small>
 				</section>
 <section>
-					<p>Use a function to remove a class ...</p>
+					<p>Use a function to remove a class ...</p><br>
+						<small><a href="http://jsbin.com/urevor/4/edit" target="_new">http://jsbin.com/urevor/4/edit</a></small>
 					<pre>
 	<code>
   $("div").removeClass(function() {
@@ -172,7 +176,8 @@
 	<code>
 	$("div").removeClass();
 	</code>
-			    </pre>
+			    </pre><br>
+						<small><a href="http://jsbin.com/urevor/6/edit" target="_new">http://jsbin.com/urevor/6/edit</a></small>
 				</section>
 				<section>
 					<h1>
@@ -210,7 +215,8 @@
 
 	$("div").toggle()
 	</code>
-			        </pre>
+			        </pre><br>
+						<small><a href="http://jsbin.com/urevor/8/edit" target="_new">http://jsbin.com/urevor/8/edit</a></small>
 				</section>
 				<section>
 					<h2>fade</h2>
@@ -224,7 +230,8 @@
 	$("div").fadeOut("fast");
 	$("div").fadeTo(2000, 0.5);
 	</code>
-			        </pre>
+			        </pre><br>
+						<small><a href="http://jsbin.com/urevor/9/edit" target="_new">http://jsbin.com/urevor/9/edit</a></small>
 				</section>
 				<section>
 					<h2>slide</h2>
@@ -239,9 +246,38 @@
 	</code>
 			        </pre>
 					<p>beware of <a href="http://blog.pengoworks.com/index.cfm/2009/4/21/Fixing-jQuerys-slideDown-effect-ie-Jumpy-Animation">padding pop</a>!</p>
-					<p></p>
+					<br>
+						<small>Greg will talk about this later...</small>
+				</section>
+				
+				<section>
+					<h2>stop();</h2>
+					<p>prevent animation from&nbsp;<br>
+					continuously&nbsp;firing, watch...&nbsp;</p>
+					<p>
+						<a href="http://goo.gl/JwNiC">jQuery look: Tim Van Damme</a>
+					</p>
+					<pre><code class="javascript">
+	$("div").hover(function(){
+		$(this).slideDown();
+	}, function(){
+		$(this).stop().slideUp();
+	})
+	</code></pre>
+					<br>
+						<small><a href="http://jsbin.com/urevor/16/edit" target="_new">http://jsbin.com/urevor/16/edit</a></small>
 				</section>
 				<section>
+					<h2>Chaining Animation</h2>
+					<div>each animation will run until it completes<br />then the next will start</div>
+					<pre>
+	<code>
+	$("div").slideDown().fadeOut();
+	</code>
+			</pre><br>
+						<small><a href="http://jsbin.com/urevor/17/edit" target="_new">http://jsbin.com/urevor/17/edit</a></small>
+				</section>
+<section>
 					<h2>animate</h2>
 					<p>
 						<a href="http://api.jquery.com/animate/">http://api.jquery.com/animate/</a>
@@ -260,37 +296,12 @@
 	   "font-size": "60px"
 	} , 2000);
 	</code>
-			        </pre>
+			        </pre><br>
+						<small><a href="http://jsbin.com/urevor/10/edit" target="_new">http://jsbin.com/urevor/10/edit</a></small>
 					<p>if position is set to "static" (the default) animating top, bottom, left and right will have no effect.</p>
-					<p>animate color with the <a href="https://github.com/jquery/jquery-color/">jQuery-color plugin</a> </p>
-				</section>
-				<section>
-					<h2>stop();</h2>
-					<p>prevent animation from&nbsp;<br>
-					continuously&nbsp;firing, watch...&nbsp;</p>
-					<p>
-						<a href="http://goo.gl/JwNiC">jQuery look: Tim Van Damme</a>
-					</p>
-					<pre><code class="javascript">
-	$("div").hover(function(){
-		$(this).slideDown();
-	}, function(){
-		$(this).stop().slideUp();
-	})
-	</code></pre>
-					<p>
-						<br />
-					</p>
-				</section>
-				<section>
-					<h2>Chaining Animation</h2>
-					<div>each animation will run until it completes<br />then the next will start</div>
-					<pre>
-	<code>
-	$("div").slideDown().fadeOut();
-	</code>
-			</pre>
-				</section>
+					<p>animate color with the <a href="https://github.com/jquery/jquery-color/">jQuery-color plugin</a> </p><br>
+						<small><a href="http://jsbin.com/urevor/15/edit" target="_new">http://jsbin.com/urevor/15/edit</a></small>
+				</section>				
 				<section>
 					<section><h2>CSS3 with jQuery fallback</h2></section>
 					<section>
@@ -310,7 +321,8 @@
 		// jQuery fallback
 		$('div').animate( ... );
 	}
-	</code></pre>
+	</code></pre><br>
+					<small><a href="http://jsbin.com/urevor/18/edit" target="_new">http://jsbin.com/urevor/18/edit</a></small>
 					</section>
 					<section>
 						Modernizr + YepNope.js to conditionaly load CSS3 animation with jQuery fallback
