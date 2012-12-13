@@ -91,6 +91,12 @@
 					</section>
 				</section>
 				<section>
+					<h2>
+						Where are the demos?<br />
+					</h2>
+					<p><a href="demo/app/demo.html" target="_new">here</a></p>
+				</section>
+				<section>
 					<h1>
 						<br />
 					</h1>
@@ -151,9 +157,9 @@
 					<p>Use a function to remove a class ...</p>
 					<pre>
 	<code>
-	$("div").removeClass(function() {
-		return $(this).prev().attr('class');
-	});
+  $("div").removeClass(function() {
+  	return $(this).prev().attr('class');
+  });
 	</code>
 			        </pre>
 					<p>or remove all classes ...</p>
@@ -254,6 +260,33 @@
 					<p>animate color with the <a href="https://github.com/jquery/jquery-color/">jQuery-color plugin</a> </p>
 				</section>
 				<section>
+					<h2>stop();</h2>
+					<p>prevent animation from&nbsp;<br>
+					continuously&nbsp;firing, watch...&nbsp;</p>
+					<p>
+						<a href="http://goo.gl/JwNiC">jQuery look: Tim Van Damme</a>
+					</p>
+					<pre><code class="javascript">
+	$("div").hover(function(){
+		$(this).slideDown();
+	}, function(){
+		$(this).stop().slideUp();
+	})
+	</code></pre>
+					<p>
+						<br />
+					</p>
+				</section>
+				<section>
+					<h2>Chaining Animation</h2>
+					<div>each animation will run until it completes<br />then the next will start</div>
+					<pre>
+	<code>
+	$("div").slideDown().fadeOut();
+	</code>
+			</pre>
+				</section>				
+				<section>
 					<section><h2>CSS3 with jQuery fallback</h2></section>
 					<section>
 						<p><a href="http://api.jquery.com/jQuery.cssHooks/">Test for CSS3</a> support</p>
@@ -287,33 +320,6 @@
 	});
 	</code></pre>
 					</section>
-				</section>
-				<section>
-					<h2>stop();</h2>
-					<p>prevent animation from&nbsp;<br>
-					continuously&nbsp;firing, watch...&nbsp;</p>
-					<p>
-						<a href="http://goo.gl/JwNiC">jQuery look: Tim Van Damme</a>
-					</p>
-					<pre><code class="javascript">
-	$("div").hover(function(){
-		$(this).slideDown();
-	}, function(){
-		$(this).slideUp();
-	})
-	</code></pre>
-					<p>
-						<br />
-					</p>
-				</section>
-				<section>
-					<h2>Chaining Animation</h2>
-					<div>each animation will run until it completes<br />then the next will start</div>
-					<pre>
-	<code>
-	$("div").slideDown().fadeOut();
-	</code>
-			</pre>
 				</section>
 				<section>
 					<h2>callbacks vs. deferreds</h2>
